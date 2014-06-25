@@ -1,4 +1,4 @@
-'use tequila';
+'use node.js';
 
 function Rule(name, testFn, actionFn, prob) {
   this.name = name;

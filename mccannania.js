@@ -1,4 +1,5 @@
-'use $JCP';
+'use node.js';
+
 var Rule = require('./rule');
 
 function rand(arr) {
