@@ -9,7 +9,7 @@ var Twit = require('twit'),
       access_token_secret:  process.env['USER_SECRET']
     }),
     endpoint = 'statuses/user_timeline',
-    oneMinute = 5 * 1000,
+    oneMinute = 60 * 1000,
     sinceId;
 
 function applyRules(status) {

@@ -1,12 +1,6 @@
 'use $JCP';
 var Rule = require('./rule');
 
-function logErr(err, whatever) {
-  if (err) {
-    console.warn(err);
-  }
-}
-
 function rand(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
