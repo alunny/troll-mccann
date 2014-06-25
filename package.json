@@ -1,0 +1,27 @@
+{
+  "name": "troll-mccann",
+  "version": "0.0.0",
+  "description": "probably the world's greatest joe mccann twitter bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alunny/troll-mccann.git"
+  },
+  "keywords": [
+    "joemccann",
+    "#medellin",
+    "#rarelyhumbled",
+    "$JCP"
+  ],
+  "author": "alunny",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/alunny/troll-mccann/issues"
+  },
+  "dependencies": {
+    "twit": "~1.1.15"
+  }
+}
