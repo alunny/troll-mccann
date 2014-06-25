@@ -1,4 +1,4 @@
-'use $JCP';
+'use node.js';
 
 var Twit = require('twit'),
     T = new Twit({
@@ -22,6 +22,10 @@ function poll() {
     data.filter(function (s) {
       return s.text.match('✈');
     }).forEach(function (s) {
+      console.log(s.text);
+    });
+
+    data.forEach(function (s) {
       console.log(s.text);
     });
   });
