@@ -11,7 +11,7 @@ function rand(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-var medellinId = '00698bbe577bad5b';
+var medellin = '00698bbe577bad5b';
 
 var inanities = [
   'nah brah',
@@ -38,6 +38,7 @@ var inaneReplyRule = new Rule(function (status) {
 }, function (status, T) {
   T.post('statuses/update', {
     status: '@joemccann ' + rand(inanities),
+    place_id: medellin,
     in_reply_to_status_id: status.id_str
   }, logErr);
 }, 0.01);
