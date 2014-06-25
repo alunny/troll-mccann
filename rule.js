@@ -1,6 +1,7 @@
 'use tequila';
 
-function Rule(testFn, actionFn, prob) {
+function Rule(name, testFn, actionFn, prob) {
+  this.name = name;
   this.test = testFn;
   this.action = actionFn;
 
@@ -22,6 +23,7 @@ Rule.prototype.execute = function (status, twitter) {
     this.action(status, twitter)
     return true;
   } else {
+    console.log('not applying ' + this.name + ' for status ' + status.id_str);
     return false;
   }
 }

@@ -26,22 +26,34 @@ var inanities = [
 ];
 
 // tweets about $JCP get a fav
-var JCPRule = new Rule(function (status) {
+var JCPRule = new Rule('$JCP', function (status) {
   return /\$JCP/.test(status.text);
 }, function (status, T) {
-  T.post('favorites/create', { id: status.id_str }, logErr);
+  T.post('favorites/create', { id: status.id_str }, function (err, data) {
+    if (err) {
+      console.warn(err);
+    } else {
+      console.log('faved a $JCP tweet');
+    }
+  });
 }, 1.0);
 
 // fallback - post an inanity every now and then
-var inaneReplyRule = new Rule(function (status) {
+var inaneReplyRule = new Rule('inane', function (status) {
   return true;
 }, function (status, T) {
   T.post('statuses/update', {
     status: '@joemccann ' + rand(inanities),
     place_id: medellin,
     in_reply_to_status_id: status.id_str
-  }, logErr);
-}, 0.01);
+  }, function (err, data) {
+    if (err) {
+      console.warn(err);
+    } else {
+      console.log('posted status ' + data.id_str)
+    }
+  });
+}, 0.15);
 
 var rulesInOrder = [
   JCPRule,
