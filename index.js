@@ -1,4 +1,5 @@
-'use strict';
+'use $JCP';
+
 var Twit = require('twit'),
     T = new Twit({
       consumer_key:         process.env['CONSUMER_KEY'],
@@ -6,15 +7,24 @@ var Twit = require('twit'),
       access_token:         process.env['USER_TOKEN'],
       access_token_secret:  process.env['USER_SECRET']
     }),
+    endpoint = 'statuses/user_timeline',
     sinceId;
 
 function poll() {
-  T.get('statuses/user_timeline',
-      { screen_name: 'joemccann', since_id: sinceId },
-      function (err, data) {
-        sinceId = data.map(function (s) { return s.id_str; })[0];
-        console.log(data.length);
+  var params = {
+    screen_name: 'joemccann', since_id: sinceId, count: 50
+  };
+
+  T.get(endpoint, params, function (err, data) {
+    sinceId = data.map(function (s) { return s.id_str; })[0];
+    console.log(data.length);
+
+    data.filter(function (s) {
+      return s.text.match('✈');
+    }).forEach(function (s) {
+      console.log(s.text);
     });
+  });
 }
 
 poll(), setInterval(poll, 30000);
