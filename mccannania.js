@@ -17,7 +17,8 @@ var inanities = [
   'Damn wow',
   'Massive achievement',
   'Seriously.',
-  'WTF, actually'
+  'WTF, actually',
+  'umm…ok?'
 ];
 
 // tweets about $JCP get a fav
