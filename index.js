@@ -10,6 +10,7 @@ var Twit = require('twit'),
     }),
     endpoint = 'statuses/user_timeline',
     oneMinute = 60 * 1000,
+    util = require('util'),
     sinceId;
 
 function applyRules(status) {
@@ -37,7 +38,9 @@ function poll() {
   T.get(endpoint, params, function (err, data) {
     var filtered;
 
-    if (data.length > 0) {
+    if (err) {
+      console.log(util.inspect(err));
+    } else if (data && data.length > 0) {
       sinceId = data.map(function (s) { return s.id_str; })[0];
 
       // ditch RTs and replies
