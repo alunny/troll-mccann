@@ -10,16 +10,18 @@ var medellin = '00698bbe577bad5b';
 
 var inanities = [
   'nah brah',
-  'lol',
-  'yeah bruv',
+  'impressive growth',
+  'Cheers mate',
   'Yup.',
   'Ok.',
-  'Damn wow',
+  'crying',
   'Massive achievement',
   'Seriously.',
   'WTF, actually',
   'umm…ok?',
-  'true'
+  'Nailed It™',
+  'ummm what???',
+  'but tech is in a bubble, right?'
 ];
 
 // tweets about $JCP get a fav
