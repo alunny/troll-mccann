@@ -21,7 +21,8 @@ var inanities = [
   'umm…ok?',
   'Nailed It™',
   'ummm what???',
-  'but tech is in a bubble, right?'
+  'but tech is in a bubble, right?',
+  'hahahahahahah exactly'
 ];
 
 // tweets about $JCP get a fav
